@@ -47,6 +47,8 @@
   <ItemGroup>
      <Compile Include="Assets\Test\Test.cs" />
      <Compile Include="Assets\ihaiu.Log\Scirpts\MDebug.cs" />
+     <Compile Include="Assets\ihaiu.Log\Scirpts\MDebugCache.cs" />
+     <Compile Include="Assets\ihaiu.Log\Scirpts\MDebugCacheItem.cs" />
      <Compile Include="Assets\ihaiu.Log\Scirpts\MDebugConfig.cs" />
      <Compile Include="Assets\ihaiu.Log\Scirpts\MDebugFlag.cs" />
      <Compile Include="Assets\ihaiu.Log\Scirpts\MDebugFlags.cs" />
