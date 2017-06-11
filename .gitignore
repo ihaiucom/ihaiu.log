@@ -1,0 +1,7 @@
+.git/.MERGE_MSG*
+.git/MERGE_MSG
+.DS_Store
+*/.DS_Store
+Log/Library
+Log/obj
+Log/Temp
