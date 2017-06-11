@@ -47,7 +47,14 @@
   <ItemGroup>
      <Compile Include="Assets\Test\Test.cs" />
      <Compile Include="Assets\ihaiu.Log\Scirpts\MDebug.cs" />
+     <Compile Include="Assets\ihaiu.Log\Scirpts\MDebugConfig.cs" />
+     <Compile Include="Assets\ihaiu.Log\Scirpts\MDebugFlag.cs" />
+     <Compile Include="Assets\ihaiu.Log\Scirpts\MDebugFlags.cs" />
+     <Compile Include="Assets\ihaiu.Log\Scirpts\MDebug_flag.cs" />
+     <Compile Include="Assets\ihaiu.Log\Scirpts\MDebug_flagid.cs" />
      <Compile Include="Assets\ihaiu.Log\Scirpts\MDebug_isopen.cs" />
+     <Compile Include="Assets\ihaiu.Log\Scirpts\MDebug_isopen_tag.cs" />
+     <Compile Include="Assets\ihaiu.Log\Scirpts\MDebug_tag.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
