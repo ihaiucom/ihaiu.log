@@ -15,9 +15,9 @@
 
 **第六步：** 我们写一个日志配置
 
-		*功能一： 用来实现类似Debug.logger.filterLogType的功能，他这个用的是级别。我想用的是Mask的形式，这样可以成复选框，设置的时间比较清晰直接。*
+*功能一： 用来实现类似Debug.logger.filterLogType的功能，他这个用的是级别。我想用的是Mask的形式，这样可以成复选框，设置的时间比较清晰直接。*
 
-		*功能二： 用于配置flag *
+*功能二： 用于配置flag *
 
 **第七步：** 定义日志输出格式： datetime;flagid;tag;msg
 
