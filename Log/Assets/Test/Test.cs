@@ -144,6 +144,15 @@ public class Test : MonoBehaviour {
             Log(item);
         }
 
+		public void UnhandledExceptionEventHandler (object sender, UnhandledExceptionEventArgs e)
+		{
+			item.Reset();
+			item.logType    			= LogType.Exception;
+			item.msg        			= string.Format("sender={0}\n e={1}", sender, e);
+			item.isUnhandledException   = true;
+			Log(item);
+		}
+
         public void Log(MDebugCacheItem item)
         {
             streamWriter.WriteLine ( item.ToString() );
@@ -164,6 +173,15 @@ public class Test : MonoBehaviour {
 	
         logReciver  = new LogReceiver();
         logHandle   = new LogHandle();
+
+		System.AppDomain.CurrentDomain.UnhandledException += UnhandledExceptionEventHandler;
+	}
+
+	private LogFile unhandleFile;
+	void UnhandledExceptionEventHandler (object sender, UnhandledExceptionEventArgs e)
+	{
+		if(unhandleFile == null) unhandleFile = new LogFile("logunhandled.txt");
+		unhandleFile.UnhandledExceptionEventHandler(sender, e);
 	}
 	
 	// Update is called once per frame
@@ -243,6 +261,14 @@ public class Test : MonoBehaviour {
         {
             logHandle.enableDefault = !logHandle.enableDefault;
         }
+
+
+
+
+		if(GUI.Button(new Rect(500, 10, 150, 50), "Show"))
+		{
+			GameObject.Find("Reporter").GetComponent<Reporter>().show = true;
+		}
 	}
 
 

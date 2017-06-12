@@ -26,7 +26,10 @@ public class MDebugCacheItem
     public string       stackTrace;
 
     [SerializeField]
-    public bool         isThread = false;
+	public bool         isThread = false;
+
+	[SerializeField]
+	public bool         isUnhandledException = false;
 
     public override string ToString()
     {
@@ -51,12 +54,13 @@ public class MDebugCacheItem
 
     public void Clear()
     {
-        datetime    = null;
-        flagId      = 0;
-        tag         = null;
-        msg         = null;
-        stackTrace  = null;
-        isThread    = false;
+        datetime    			= null;
+        flagId      			= 0;
+        tag         			= null;
+        msg         			= null;
+        stackTrace  			= null;
+		isThread    			= false;
+		isUnhandledException    = false;
     }
 
     public void Reset()
