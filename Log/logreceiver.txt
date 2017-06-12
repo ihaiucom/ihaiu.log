@@ -1,72 +1,95 @@
-13:52:47.67-332 isThread=False logType=Log, flagId=0, tag=, msg=Hello Log, stackTrace=UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-LogHandle:LogFormat(LogType, Object, String, Object[]) (at Assets/Test/Test.cs:80)
+1:55:29.268-862 isThread=False logType=Log, flagId=0, tag=, msg=Hello Log, stackTrace=UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+LogHandle:LogFormat(LogType, Object, String, Object[]) (at Assets/Test/Test.cs:86)
 UnityEngine.Debug:Log(Object)
-Test:OnGUI() (at Assets/Test/Test.cs:200)
+Test:OnGUI() (at Assets/Test/Test.cs:224)
 
 
 
-13:52:47.68-332 isThread=True logType=Log, flagId=0, tag=, msg=Hello Log, stackTrace=UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-LogHandle:LogFormat(LogType, Object, String, Object[]) (at Assets/Test/Test.cs:80)
+1:55:29.880-893 isThread=False logType=Error, flagId=0, tag=, msg=Hello LogError, stackTrace=UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+LogHandle:LogFormat(LogType, Object, String, Object[]) (at Assets/Test/Test.cs:86)
+UnityEngine.Debug:LogError(Object)
+Test:OnGUI() (at Assets/Test/Test.cs:231)
+
+
+
+1:55:30.648-933 isThread=False logType=Exception, flagId=0, tag=, msg=Exception: Hello LogException, stackTrace=UnityEngine.DebugLogHandler:LogException(Exception, Object)
+LogHandle:LogException(Exception, Object) (at Assets/Test/Test.cs:96)
+UnityEngine.Debug:LogException(Exception)
+Test:OnGUI() (at Assets/Test/Test.cs:237)
+
+
+
+1:55:31.116-956 isThread=False logType=Exception, flagId=0, tag=, msg=NullReferenceException: Object reference not set to an instance of an object, stackTrace=Test.OnGUI () (at Assets/Test/Test.cs:250)
+
+
+
+1:55:49.199-392 isThread=False logType=Log, flagId=0, tag=, msg=Hello Log, stackTrace=UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+LogHandle:LogFormat(LogType, Object, String, Object[]) (at Assets/Test/Test.cs:86)
 UnityEngine.Debug:Log(Object)
-Test:OnGUI() (at Assets/Test/Test.cs:200)
+Test:OnGUI() (at Assets/Test/Test.cs:224)
 
 
 
-13:53:17.483-845 isThread=False logType=Exception, flagId=0, tag=, msg=NullReferenceException: Object reference not set to an instance of an object, stackTrace=Test.OnGUI () (at Assets/Test/Test.cs:226)
+1:55:49.199-392 isThread=False logType=Log, flagId=0, tag=, msg=Hello Log, stackTrace=UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+LogHandle:LogFormat(LogType, Object, String, Object[]) (at Assets/Test/Test.cs:86)
+UnityEngine.Debug:Log(Object)
+Test:OnGUI() (at Assets/Test/Test.cs:224)
 
 
 
-13:53:17.483-845 isThread=True logType=Exception, flagId=0, tag=, msg=NullReferenceException: Object reference not set to an instance of an object, stackTrace=Test.OnGUI () (at Assets/Test/Test.cs:226)
+1:55:49.599-411 isThread=False logType=Log, flagId=0, tag=, msg=Hello Log, stackTrace=UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+LogHandle:LogFormat(LogType, Object, String, Object[]) (at Assets/Test/Test.cs:86)
+UnityEngine.Debug:Log(Object)
+Test:OnGUI() (at Assets/Test/Test.cs:224)
 
 
 
-13:53:41.687-271 isThread=False logType=Error, flagId=0, tag=, msg=Hello LogError, stackTrace=UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-LogHandle:LogFormat(LogType, Object, String, Object[]) (at Assets/Test/Test.cs:80)
-UnityEngine.Debug:LogError(Object)
-Test:OnGUI() (at Assets/Test/Test.cs:207)
+1:55:49.599-411 isThread=False logType=Log, flagId=0, tag=, msg=Hello Log, stackTrace=UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+LogHandle:LogFormat(LogType, Object, String, Object[]) (at Assets/Test/Test.cs:86)
+UnityEngine.Debug:Log(Object)
+Test:OnGUI() (at Assets/Test/Test.cs:224)
 
 
 
-13:53:41.687-271 isThread=True logType=Error, flagId=0, tag=, msg=Hello LogError, stackTrace=UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-LogHandle:LogFormat(LogType, Object, String, Object[]) (at Assets/Test/Test.cs:80)
-UnityEngine.Debug:LogError(Object)
-Test:OnGUI() (at Assets/Test/Test.cs:207)
+1:55:50.33-434 isThread=False logType=Log, flagId=0, tag=, msg=Hello Log, stackTrace=UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+LogHandle:LogFormat(LogType, Object, String, Object[]) (at Assets/Test/Test.cs:86)
+UnityEngine.Debug:Log(Object)
+Test:OnGUI() (at Assets/Test/Test.cs:224)
 
 
 
-13:53:56.671-601 isThread=False logType=Exception, flagId=0, tag=, msg=Exception: Hello LogException, stackTrace=UnityEngine.DebugLogHandler:LogException(Exception, Object)
-LogHandle:LogException(Exception, Object) (at Assets/Test/Test.cs:90)
-UnityEngine.Debug:LogException(Exception)
-Test:OnGUI() (at Assets/Test/Test.cs:213)
+1:55:50.33-434 isThread=False logType=Log, flagId=0, tag=, msg=Hello Log, stackTrace=UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+LogHandle:LogFormat(LogType, Object, String, Object[]) (at Assets/Test/Test.cs:86)
+UnityEngine.Debug:Log(Object)
+Test:OnGUI() (at Assets/Test/Test.cs:224)
 
 
 
-13:53:56.671-601 isThread=True logType=Exception, flagId=0, tag=, msg=Exception: Hello LogException, stackTrace=UnityEngine.DebugLogHandler:LogException(Exception, Object)
-LogHandle:LogException(Exception, Object) (at Assets/Test/Test.cs:90)
-UnityEngine.Debug:LogException(Exception)
-Test:OnGUI() (at Assets/Test/Test.cs:213)
+1:55:50.265-445 isThread=False logType=Log, flagId=0, tag=, msg=Hello Log, stackTrace=UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+LogHandle:LogFormat(LogType, Object, String, Object[]) (at Assets/Test/Test.cs:86)
+UnityEngine.Debug:Log(Object)
+Test:OnGUI() (at Assets/Test/Test.cs:224)
 
 
 
-13:54:45.787-682 isThread=False logType=Exception, flagId=0, tag=, msg=NullReferenceException: Object reference not set to an instance of an object, stackTrace=Test.OnGUI () (at Assets/Test/Test.cs:226)
+1:55:50.265-445 isThread=False logType=Log, flagId=0, tag=, msg=Hello Log, stackTrace=UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+LogHandle:LogFormat(LogType, Object, String, Object[]) (at Assets/Test/Test.cs:86)
+UnityEngine.Debug:Log(Object)
+Test:OnGUI() (at Assets/Test/Test.cs:224)
 
 
 
-13:54:45.787-682 isThread=True logType=Exception, flagId=0, tag=, msg=NullReferenceException: Object reference not set to an instance of an object, stackTrace=Test.OnGUI () (at Assets/Test/Test.cs:226)
+1:55:50.465-453 isThread=False logType=Log, flagId=0, tag=, msg=Hello Log, stackTrace=UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+LogHandle:LogFormat(LogType, Object, String, Object[]) (at Assets/Test/Test.cs:86)
+UnityEngine.Debug:Log(Object)
+Test:OnGUI() (at Assets/Test/Test.cs:224)
 
 
 
-14:46:3.210-873 isThread=False logType=Exception, flagId=0, tag=, msg=Exception: Hello LogException, stackTrace=UnityEngine.DebugLogHandler:LogException(Exception, Object)
-LogHandle:LogException(Exception, Object) (at Assets/Test/Test.cs:90)
-UnityEngine.Debug:LogException(Exception)
-Test:OnGUI() (at Assets/Test/Test.cs:213)
-
-
-
-14:46:3.210-873 isThread=True logType=Exception, flagId=0, tag=, msg=Exception: Hello LogException, stackTrace=UnityEngine.DebugLogHandler:LogException(Exception, Object)
-LogHandle:LogException(Exception, Object) (at Assets/Test/Test.cs:90)
-UnityEngine.Debug:LogException(Exception)
-Test:OnGUI() (at Assets/Test/Test.cs:213)
+1:55:50.465-453 isThread=False logType=Log, flagId=0, tag=, msg=Hello Log, stackTrace=UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+LogHandle:LogFormat(LogType, Object, String, Object[]) (at Assets/Test/Test.cs:86)
+UnityEngine.Debug:Log(Object)
+Test:OnGUI() (at Assets/Test/Test.cs:224)
 
 
 

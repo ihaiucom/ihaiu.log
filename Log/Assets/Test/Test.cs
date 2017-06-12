@@ -3,6 +3,8 @@ using System.Collections;
 using System.IO;
 using System;
 using System.Text;
+using System.Threading;
+using System.Collections.Generic;
 
 public class Test : MonoBehaviour {
 
@@ -10,6 +12,7 @@ public class Test : MonoBehaviour {
     public class LogReceiver
     {
         private LogFile     file;
+		private int 		mainThreadID = -1;
 
         public LogReceiver()
         {
@@ -30,17 +33,20 @@ public class Test : MonoBehaviour {
         {
             Application.logMessageReceived          += LogReceived;
             Application.logMessageReceivedThreaded  += LogThreadReceived;
+			this.mainThreadID = Thread.CurrentThread.ManagedThreadId;
         }
 
         private void LogReceived(string condition, string stackTrace, LogType type)
         {
-            file.LogReceived(condition, stackTrace, type);
+			if (this.mainThreadID == Thread.CurrentThread.ManagedThreadId)
+            	file.LogReceived(condition, stackTrace, type);
         }
 
 
         private void LogThreadReceived(string condition, string stackTrace, LogType type)
-        {
-            file.LogThreadReceived(condition, stackTrace, type);
+		{
+			if (this.mainThreadID != Thread.CurrentThread.ManagedThreadId)
+            	file.LogThreadReceived(condition, stackTrace, type);
         }
     }
 
@@ -268,6 +274,18 @@ public class Test : MonoBehaviour {
 		if(GUI.Button(new Rect(500, 10, 150, 50), "Show"))
 		{
 			GameObject.Find("Reporter").GetComponent<Reporter>().show = true;
+		}
+
+
+
+		if(GUI.Button(new Rect(500, 70, 150, 50), "BK"))
+		{
+			int i = 0;
+			List<byte[]> list = new List<byte[]>();
+			while(true)
+			{
+				list.Add(File.ReadAllBytes("Assets/a.jpg"));
+			}
 		}
 	}
 

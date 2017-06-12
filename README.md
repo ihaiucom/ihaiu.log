@@ -22,3 +22,14 @@
 **第七步：** 定义日志输出格式： datetime;flagid;tag;msg
 
 **第八步：** 写日志缓存
+
+
+### 临时想法 2017-6-13 2:22
+
+参照unity ILogHandle的方式。我想自定一个专门的 日志捕获器（LogCatche）。这个类会有一个消息事件抛出，并且过滤配置的信息。
+
+如果需要写入文件缓存就写一个 日志文件写入流 (LogFile), 这个类去监听 LogCatche的消息事件
+
+如果需要缓存到内存中， 就可以写一个 日志缓存器 （LogCache）， 这个类去监听 LogCatche的消息事件
+
+如果需要缓实时通过socket传送到某个服务， 就可以写一个 日志服务 （LogSocketClient, LogSocketServer）， 这个类去监听 LogCatche的消息事件

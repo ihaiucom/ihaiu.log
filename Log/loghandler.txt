@@ -1,28 +1,29 @@
-13:52:47.63-332 isThread=False logType=Log, flagId=0, tag=, msg=Hello Log, stackTrace=
+1:55:29.264-862 isThread=False logType=Log, flagId=0, tag=, msg=Hello Log, stackTrace=
 
 
-13:53:41.687-271 isThread=False logType=Error, flagId=0, tag=, msg=Hello LogError, stackTrace=
+1:55:29.880-893 isThread=False logType=Error, flagId=0, tag=, msg=Hello LogError, stackTrace=
 
 
-13:53:56.670-601 isThread=False logType=Exception, flagId=0, tag=, msg=
+1:55:30.647-933 isThread=False logType=Exception, flagId=0, tag=, msg=
 System.Exception: Hello LogException, stackTrace=
 
 
-13:54:22.278-265 isThread=False logType=Log, flagId=0, tag=, msg=Hello Log, stackTrace=
+1:55:49.199-392 isThread=False logType=Log, flagId=0, tag=, msg=Hello Log, stackTrace=
 
 
-13:54:29.954-412 isThread=False logType=Error, flagId=0, tag=, msg=Hello LogError, stackTrace=
+1:55:49.599-411 isThread=False logType=Log, flagId=0, tag=, msg=Hello Log, stackTrace=
 
 
-13:54:36.176-559 isThread=False logType=Exception, flagId=0, tag=, msg=
-System.Exception: Hello LogException, stackTrace=
+1:55:50.32-434 isThread=False logType=Log, flagId=0, tag=, msg=Hello Log, stackTrace=
 
 
-14:45:51.664-576 isThread=False logType=Exception, flagId=0, tag=, msg=
-System.Exception: Hello LogException, stackTrace=
+1:55:50.264-445 isThread=False logType=Log, flagId=0, tag=, msg=Hello Log, stackTrace=
 
 
-14:46:3.209-873 isThread=False logType=Exception, flagId=0, tag=, msg=
+1:55:50.464-453 isThread=False logType=Log, flagId=0, tag=, msg=Hello Log, stackTrace=
+
+
+.209-873 isThread=False logType=Exception, flagId=0, tag=, msg=
 System.Exception: Hello LogException, stackTrace=
 
 
