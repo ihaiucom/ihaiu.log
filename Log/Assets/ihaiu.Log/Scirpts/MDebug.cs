@@ -4,7 +4,8 @@ using UnityEngine.Internal;
 
 public partial class MDebug 
 {
-	public static MDebugConfig config = new MDebugConfig();
+    public static MDebugConfig      config  = new MDebugConfig();
+    public static MDebugCache       cache   = new MDebugCache();
 
 	#region Log
 	public static void Log(object message)
