@@ -4,13 +4,14 @@ using UnityEngine.Internal;
 
 public partial class MDebug 
 {
-    public static MDebugConfig      config  = new MDebugConfig();
-    public static MDebugCache       cache   = new MDebugCache();
+	public static MDebug.LogHandle      logHandle  	= new MDebug.LogHandle();
+    public static MDebug.Config      	config  	= new MDebug.Config();
+	public static MDebug.LogCache       cache   	= new MDebug.LogCache();
+	public static MDebug.LogFile       	file   		= new MDebug.LogFile();
 
 	#region Log
 	public static void Log(object message)
 	{
-		
 	}
 
 

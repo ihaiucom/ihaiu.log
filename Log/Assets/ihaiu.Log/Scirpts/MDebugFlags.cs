@@ -2,11 +2,14 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public partial class MDebugFlags
+public partial class MDebug 
 {
-	public static MDebugFlag defaul 	= new MDebugFlag(0		, "Default"		, true);
-	public static MDebugFlag debug 		= new MDebugFlag(1		, "Default"		, true);
-	public static MDebugFlag main 		= new MDebugFlag(2		, "Main"		, true);
-	public static MDebugFlag login 		= new MDebugFlag(3		, "Login"		, true);
-	public static MDebugFlag load 		= new MDebugFlag(4		, "Load"		, true);
+	public partial class Flags
+	{
+		public static FlagData defaul 		= new FlagData(0		, "Default"		, true);
+		public static FlagData debug 		= new FlagData(1		, "Default"		, true);
+		public static FlagData main 		= new FlagData(2		, "Main"		, true);
+		public static FlagData login 		= new FlagData(3		, "Login"		, true);
+		public static FlagData load 		= new FlagData(4		, "Load"		, true);
+	}
 }

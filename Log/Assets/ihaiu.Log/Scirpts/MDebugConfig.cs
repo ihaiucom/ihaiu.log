@@ -2,115 +2,129 @@
 using System.Collections;
 using System.Collections.Generic;
 
-[System.Serializable]
-public class MDebugConfig
+public partial class MDebug 
 {
-	[SerializeField]
-	public bool applyByMerge		= true;
-	
-	[SerializeField]
-	public bool enableError			= true;
-
-	[SerializeField]
-	public bool enableAssert		= true;
-
-	[SerializeField]
-	public bool enableWarning		= true;
-
-	[SerializeField]
-	public bool enableLog			= true;
-
-	[SerializeField]
-	public bool enableException		= true;
-
-
-	[SerializeField]
-	public List<MDebugFlag>	list = new List<MDebugFlag>();
-
-	private Dictionary<int, MDebugFlag> dict = new Dictionary<int, MDebugFlag>();
-
-
-	public void SetFlag(int id, bool isopen)
+	[System.Serializable]
+	public class Config
 	{
-		SetFlag(id, null, isopen);
-	}
+		[SerializeField]
+		public bool applyByMerge		= true;
+		
+		[SerializeField]
+		public bool enableError			= true;
 
-	public void SetFlag(int id, string tag, bool isopen)
-	{
-		if(dict.ContainsKey(id))
+		[SerializeField]
+		public bool enableAssert		= true;
+
+		[SerializeField]
+		public bool enableWarning		= true;
+
+		[SerializeField]
+		public bool enableLog			= true;
+
+		[SerializeField]
+		public bool enableException		= true;
+
+		[SerializeField]
+		public bool cacheEnable			= true;
+		[SerializeField]
+		public int cacheSize			= 100;
+
+
+		[SerializeField]
+		public string logfileAll			= "log_all.txt";
+		[SerializeField]
+		public string logfileError			= "log_error.txt";
+
+
+		[SerializeField]
+		public List<FlagData>	flags = new List<FlagData>();
+
+		private Dictionary<int, FlagData> flagmap = new Dictionary<int, FlagData>();
+
+
+		public void SetFlag(int id, bool isopen)
 		{
-			MDebugFlag flag = dict[id];
-			flag.isopen = isopen;
-			flag.tag = string.IsNullOrEmpty(tag) ? flag.tag : tag;
+			SetFlag(id, null, isopen);
 		}
-		else
-		{
-			MDebugFlag flag = new MDebugFlag(id, tag, isopen);
-			dict.Add(flag.id, flag);
-			list.Add(flag);
-		}
-	}
 
-	private void ListToDict()
-	{
-		foreach(MDebugFlag item in list)
+		public void SetFlag(int id, string tag, bool isopen)
 		{
-			if(dict.ContainsKey(item.id))
+			if(flagmap.ContainsKey(id))
 			{
-				MDebug.LogErrorFormat(MDebugFlags.debug, "MDebugConfig.ListToDict MDebugFlag has id={0}, dict[{0}]={1}, item={1}", item.id, dict[item.id], item);
+				FlagData flag = flagmap[id];
+				flag.isopen = isopen;
+				flag.tag = string.IsNullOrEmpty(tag) ? flag.tag : tag;
 			}
 			else
 			{
-				dict.Add(item.id, item);
+				FlagData flag = new FlagData(id, tag, isopen);
+				flagmap.Add(flag.id, flag);
+				flags.Add(flag);
 			}
 		}
-	}
 
-	public void Apply()
-	{
-		if(applyByMerge)
+		private void ListToDict()
 		{
-			MDebug.config.Merge(this);
-		}
-		else
-		{
-			ListToDict();
-			MDebug.config = this;
-		}
-	}
-
-	public void Merge(MDebugConfig config)
-	{
-		enableError 		= config.enableError;
-		enableAssert 		= config.enableAssert;
-		enableWarning 		= config.enableWarning;
-		enableLog 			= config.enableLog;
-		enableException 	= config.enableException;
-
-		foreach(MDebugFlag item in config.list)
-		{
-			if(dict.ContainsKey(item.id))
+			foreach(FlagData item in flags)
 			{
-				MDebug.LogFormat(MDebugFlags.debug, "MDebugConfig.ListToDict MDebugFlag has id={0}, dict[{0}]={1}, item={1}", item.id, dict[item.id], item);
-				dict[item.id] = item;
+				if(flagmap.ContainsKey(item.id))
+				{
+					MDebug.LogErrorFormat(Flags.debug, "MDebugConfig.ListToDict MDebugFlag has id={0}, dict[{0}]={1}, item={1}", item.id, flagmap[item.id], item);
+				}
+				else
+				{
+					flagmap.Add(item.id, item);
+				}
+			}
+		}
+
+		public void Apply()
+		{
+			if(applyByMerge)
+			{
+				MDebug.config.Merge(this);
 			}
 			else
 			{
-				dict.Add(item.id, item);
-				list.Add(item);
+				ListToDict();
+				MDebug.config = this;
 			}
 		}
-	}
 
-	public override string ToString ()
-	{
-		string liststr = "";
-		foreach(MDebugFlag item in list)
+		public void Merge(Config config)
 		{
-			liststr += item.ToString() + "\n";
+			enableError 		= config.enableError;
+			enableAssert 		= config.enableAssert;
+			enableWarning 		= config.enableWarning;
+			enableLog 			= config.enableLog;
+			enableException 	= config.enableException;
+
+			foreach(FlagData item in config.flags)
+			{
+				if(flagmap.ContainsKey(item.id))
+				{
+					MDebug.LogFormat(Flags.debug, "MDebugConfig.ListToDict MDebugFlag has id={0}, dict[{0}]={1}, item={1}", item.id, flagmap[item.id], item);
+					flagmap[item.id] = item;
+				}
+				else
+				{
+					flagmap.Add(item.id, item);
+					flags.Add(item);
+				}
+			}
 		}
 
-		return string.Format ("[MDebugConfig enableError={0}, enableAssert={1}, enableWarning={2}, enableLog={4}, enableException={5}] list=\n{6}", 
-			enableError, enableAssert, enableWarning, enableLog, enableException, liststr);
+		public override string ToString ()
+		{
+			string liststr = "";
+			foreach(FlagData item in flags)
+			{
+				liststr += item.ToString() + "\n";
+			}
+
+			return string.Format ("[MDebugConfig enableError={0}, enableAssert={1}, enableWarning={2}, enableLog={4}, enableException={5}] list=\n{6}", 
+				enableError, enableAssert, enableWarning, enableLog, enableException, liststr);
+		}
 	}
 }

@@ -78,8 +78,10 @@ public class Test : MonoBehaviour {
             Debug.logger.logHandler = this;
         }
 
+		public UnityEngine.Object context;
         public void LogFormat (LogType logType, UnityEngine.Object context, string format, params object[] args)
         {
+			
             file.LogFormat(logType, context, format, args);
             if (enableDefault)
             {
@@ -104,7 +106,7 @@ public class Test : MonoBehaviour {
         public string           path;
         private FileStream      fileStream;
         private StreamWriter    streamWriter;
-        private MDebugCacheItem item = new MDebugCacheItem();
+        private MDebug.LogData item = new MDebug.LogData();
         public LogFile(string path)
         {
             this.path = path;
@@ -118,6 +120,7 @@ public class Test : MonoBehaviour {
             item.Reset();
             item.logType    = logType;
             item.msg        = String.Format(format, args);
+			if(context != null) item.stackTrace = context.GetType() +  context.ToString();
             Log(item);
         }
 
@@ -159,7 +162,7 @@ public class Test : MonoBehaviour {
 			Log(item);
 		}
 
-        public void Log(MDebugCacheItem item)
+        public void Log(MDebug.LogData item)
         {
             streamWriter.WriteLine ( item.ToString() );
             streamWriter.Flush ();
